@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"  >
+   
+    <h:body>
+  <h:form id="form">
+
+    <p:growl id="msgs" showDetail="true"/>
+				
+	<p:panel header="Double Combo" style="margin-bottom:10px;">
+        <h:panelGrid columns="2" cellpadding="5">
+            <p:selectOneMenu id="city" >
+                <f:selectItem itemLabel="Select City"  />
+                <f:selectItems />
+                <p:ajax update="suburbs"
+                         />
+            </p:selectOneMenu>
+
+            <p:selectOneMenu id="suburbs" >
+                <f:selectItem itemLabel="Select Suburb" />
+                <f:selectItems  />
+            </p:selectOneMenu>
+        </h:panelGrid>
+
+        <p:separator />
+		
+		<p:commandButton value="Submit" update="msgs"  id="btnSubmit"/>
+
+	</p:panel>
+
+</h:form>
+    </h:body>
+               
+</html>

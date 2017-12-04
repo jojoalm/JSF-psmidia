@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <f:view>
+    <ui:composition template="HeadAside.xhtml">
+     <ui:define name="content">
+         <h:form>
+            
+            <br></br>
+            <br></br>
+            <br></br>
+            
+            
+            <table cellspacing="10px" align="center"  border="5px" bordercolor="white">
+                    
+                    <tbody>
+                        <tr>
+                            <h:inputHidden value="#{estabelecimentosDAO.e.est_id}" />
+                            
+                            <td>Nome EStabelecimento:</td>
+                            <td><h:inputText value="#{estabelecimentosDAO.e.est_nome}"  required="true">                                                                                          
+                                </h:inputText>                                 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Rua Estabelecimento:</td>
+                            <td><h:inputText value="#{estabelecimentosDAO.e.est_rua}" required="true"  > 
+                                    </h:inputText>  
+                                
+                            </td>
+                        </tr>
+                         <tr>
+                            <td>Bairro Estabelecimento:</td>
+                            <td><h:inputText value="#{estabelecimentosDAO.e.est_bairro}" required="true"  >                                    
+                                </h:inputText>                              
+                            </td>                                   
+                        </tr>
+                         <tr>
+                            <td>Descrição Estabelecimento:</td>
+                            <td><h:inputText value="#{estabelecimentosDAO.e.est_desc}" required="true"  >                                
+                                </h:inputText>    
+                                                 
+                         </td>                                   
+                        </tr>
+                        
+                         <tr>
+                            <td>Número Estabelecimento:</td>
+                            <td><h:inputText value="#{estabelecimentosDAO.e.est_numero}" required="true" >
+                                
+                                </h:inputText>    
+                          
+                          
+                         </td>                                   
+                        </tr>
+                        
+                        
+                         <tr>
+                            <td>UF Estabelecimento:</td>
+                            <td><h:inputText value="#{estabelecimentosDAO.e.est_uf}" required="true" >
+                                
+                                    
+                                </h:inputText>    
+                         
+                          
+                         </td>                                   
+                        </tr>
+                        
+                         <tr>
+                            <td>Cidade Estabelecimento</td>
+                            <td><h:inputText value="#{estabelecimentosDAO.e.est_cidades}" required="true" >                                    
+                                </h:inputText>    
+                          <h:message for="preco"/>                          
+                         </td>                                   
+                        </tr>
+                        <tr>                            
+                           <td><h:commandButton value="atualizar" action="#{estabelecimentosDAO.$EditarEstabelecimentos}">
+                                    <f:setPropertyActionListener value="#{e}" target="#{e}"/>
+                                </h:commandButton></td>                                   
+                        </tr>
+                         
+                    </tbody>
+                </table>                                        
+            </h:form>
+
+     </ui:define>
+    </ui:composition>
+    </f:view>
+</html>

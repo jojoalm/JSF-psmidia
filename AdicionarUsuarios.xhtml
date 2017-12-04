@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <f:view>
+        <h:head>
+            <title>Titulo Template</title>
+        </h:head>
+        <h:body>
+            <h1><h:outputText value="Novo Usuario!"/></h1>
+            
+                <ui:define name="add_user">
+                    <center>
+                        <h:form>
+                            <p:growl id="growl" showDetail="true"  life="5000" /> 
+                            <panel>
+                                <h:panelGrid columns="1">
+                                    <h:outputLabel value="Nome:" for="nome"/>
+                                    <h:inputText value="#{usuariosDAO.p.usu_nome}" 
+                                                 required="true" requiredMessage="Nome é obrigatório." id="nome"/>
+
+                                    <h:outputLabel value="Username:" for="username" />
+                                    <h:inputText value="#{usuariosDAO.p.usu_username}" 
+                                                 required="true" requiredMessage="Username é obrigatório." id="username"/>
+
+                                    <h:outputLabel value="Password:" for="password" />
+                                    <h:inputSecret value="#{usuariosDAO.p.usu_password}" required="true" 
+                                                   requiredMessage="Password é obrigatório" id="password"/>
+
+                                    <h:outputLabel value="Redigite seu Password:" for="passwordconf" />
+                                    
+
+
+                                    <h:outputLabel value="Email:" for="email" />
+                                 
+
+                                    <h:outputLabel value="Redigite Email:" for="emailconf"   />
+                                    <h:inputText value="#{usuariosDAO.p.usu_email}" 
+                                                 requiredMessage="Email é obrigatório" required="true" id="emailconf"/>
+
+                                    <h:outputLabel value="Apelido:" for="apelido" />
+                                    <h:inputText value="#{usuariosDAO.p.usu_nickname}" 
+                                                 required="true" id="apelido"
+                                                 requiredMessage="Apelido é obrigatório" /> <br/>
+
+                                </h:panelGrid>
+                            </panel>
+                            <h:commandButton action="#{usuariosDAO.$AdicionarUsuarios}" value="Cadastrar"/>
+
+
+                        </h:form>
+                    </center>
+                </ui:define>
+            
+
+
+
+        </h:body>
+    </f:view>
+</html>
+
+
